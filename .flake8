@@ -1,0 +1,9 @@
+[flake8]
+per-file-ignores = main.py:E202
+extend-ignore = E201
+exclude = .git,
+          venv,
+          examples.py,
+          __pycache__
+
+max-complexity = 3
