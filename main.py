@@ -2,11 +2,11 @@
 # Press Double Shift to search everywhere for
 # classes, files, tool windows, actions, and settings.
 
-def print_hi(text):
+def print_hi(text: str):
     """Function prints text.
 
-
-    text -- text to print
+    Parameters:
+    text (str) -- text to print
     """
     # Use a breakpoint in the code line below to debug your script.
     print(f'{text}')  # Press Ctrl+F8 to toggle the breakpoint.
