@@ -14,4 +14,4 @@ class Figure(ABC):
         if not isinstance(other_object, Figure):
             raise ValueError
 
-        return self.get_area() + other_object.get_area()
+        return self.area + other_object.area
