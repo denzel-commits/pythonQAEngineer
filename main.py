@@ -1,6 +1,8 @@
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for
-# classes, files, tool windows, actions, and settings.
+from src.square import Square
+from src.rectangle import Rectangle
+from src.circle import Circle
+from src.triangle import Triangle
+
 
 def print_hi(text: str):
     """Function prints text.
@@ -16,4 +18,18 @@ def print_hi(text: str):
 if __name__ == '__main__':
     print_hi('Hello world')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    square_obj = Square(4)
+    rectangle_obj = Rectangle(2, 4)
+    circle_obj = Circle(4)
+    triangle_obj = Triangle(4, 5, 7)
+
+    print('perimeter = ', square_obj.perimeter)
+    print('area = ', square_obj.area)
+
+    print('circle perimeter = ', circle_obj.perimeter)
+    print('circle area = ', circle_obj.area)
+
+    print('triangle perimeter = ', triangle_obj.perimeter)
+    print('triangle area = ', triangle_obj.area)
+
+    print('add area = ', square_obj.add_area(rectangle_obj))
