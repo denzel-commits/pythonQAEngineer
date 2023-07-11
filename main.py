@@ -21,10 +21,10 @@ if __name__ == '__main__':
     square_obj = Square(4)
     rectangle_obj = Rectangle(2, 4)
     circle_obj = Circle(4)
-    triangle_obj = Triangle(4, 5, 7)
+    triangle_obj = Triangle(13, 14, 15)
 
-    print('perimeter = ', square_obj.perimeter)
-    print('area = ', square_obj.area)
+    print('perimeter = ', rectangle_obj.perimeter)
+    print('area = ', rectangle_obj.area)
 
     print('circle perimeter = ', circle_obj.perimeter)
     print('circle area = ', circle_obj.area)
