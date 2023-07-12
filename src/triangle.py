@@ -4,11 +4,9 @@ from src.figure import Figure
 class Triangle(Figure):
 
     def __init__(self, side_a, side_b, side_c):
-        if isinstance(side_a, str) or isinstance(side_b, str) or isinstance(side_c, str):
-            raise ValueError
 
-        if side_a <= 0 or side_b <= 0 or side_c <= 0:
-            raise ValueError
+        self._validate_sides(side_a, side_b, side_c)
+        self._validate_proper_triangle(side_a, side_b, side_c)
 
         self.name = "Triangle"
 
@@ -18,6 +16,19 @@ class Triangle(Figure):
 
         self.area = self.get_area()
         self.perimeter = self.get_perimeter()
+
+    @staticmethod
+    def _validate_sides(side_a, side_b, side_c):
+        if isinstance(side_a, str) or isinstance(side_b, str) or isinstance(side_c, str):
+            raise ValueError
+
+        if side_a <= 0 or side_b <= 0 or side_c <= 0:
+            raise ValueError
+
+    @staticmethod
+    def _validate_proper_triangle(side_a, side_b, side_c):
+        if not (side_a + side_b > side_c and side_a + side_c > side_b and side_b + side_c > side_a):
+            raise ValueError
 
     def get_area(self):
         s = (self._side_a + self._side_b + self._side_c) / 2

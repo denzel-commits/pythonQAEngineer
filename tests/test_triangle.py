@@ -8,7 +8,7 @@ from src.triangle import Triangle
 
 class TestTriangle:
     @pytest.mark.parametrize("side_a, side_b, side_c, expected_name", [
-        (1, 2, 3, "Triangle"),
+        (2, 2, 3, "Triangle"),
     ])
     def test_triangle_name(self, side_a, side_b, side_c, expected_name):
         triangle_obj = Triangle(side_a, side_b, side_c)
@@ -33,6 +33,9 @@ class TestTriangle:
         (0, 0, 0),
         (1, 1, -1),
         (1, "1", 1),
+        (10, 3, 30),
+        (30, 5, 5),
+        (9, 15, 1),
     ])
     def test_triangle_negative(self, side_a, side_b, side_c):
         with pytest.raises(ValueError):
