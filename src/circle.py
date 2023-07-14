@@ -10,8 +10,14 @@ class Circle(Figure):
 
         self.name = "Circle"
         self._radius = radius
-        self.area = self.get_area()
-        self.perimeter = self.get_perimeter()
+
+    @property
+    def area(self):
+        return round(pi * (self._radius ** 2), 2)
+
+    @property
+    def perimeter(self):
+        return round(2 * pi * self._radius, 2)
 
     def get_area(self):
         return round(pi * (self._radius ** 2), 2)

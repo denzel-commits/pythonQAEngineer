@@ -14,9 +14,6 @@ class Triangle(Figure):
         self._side_b = side_b
         self._side_c = side_c
 
-        self.area = self.get_area()
-        self.perimeter = self.get_perimeter()
-
     @staticmethod
     def _validate_sides(side_a, side_b, side_c):
         if isinstance(side_a, str) or isinstance(side_b, str) or isinstance(side_c, str):
@@ -29,6 +26,16 @@ class Triangle(Figure):
     def _validate_proper_triangle(side_a, side_b, side_c):
         if not (side_a + side_b > side_c and side_a + side_c > side_b and side_b + side_c > side_a):
             raise ValueError
+
+    @property
+    def area(self):
+        s = (self._side_a + self._side_b + self._side_c) / 2
+
+        return round(((s * (s - self._side_a) * (s - self._side_b) * (s - self._side_c)) ** 0.5), 2)
+
+    @property
+    def perimeter(self):
+        return self._side_a + self._side_b + self._side_c
 
     def get_area(self):
         s = (self._side_a + self._side_b + self._side_c) / 2
