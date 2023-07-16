@@ -16,6 +16,7 @@ class Triangle(Figure):
 
     @staticmethod
     def _validate_sides(side_a, side_b, side_c):
+        """Validates that the sides are positive numbers"""
         if isinstance(side_a, str) or isinstance(side_b, str) or isinstance(side_c, str):
             raise ValueError
 
@@ -24,6 +25,7 @@ class Triangle(Figure):
 
     @staticmethod
     def _validate_proper_triangle(side_a, side_b, side_c):
+        """Validates that creation of triangle is possible"""
         if not (side_a + side_b > side_c and side_a + side_c > side_b and side_b + side_c > side_a):
             raise ValueError
 
