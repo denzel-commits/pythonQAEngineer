@@ -1,5 +1,22 @@
+
 # Python QA Engineer
 
-Homework repo
+Contains:
+* Homework 1 "Hello world"
+* Homework 2 Python OOP
+## Installation
 
-## Homework 1 contains "Hello world"
+To install this project run
+
+```bash
+  pip3 install -r requirements.txt
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  pytest ./tests/
+```
