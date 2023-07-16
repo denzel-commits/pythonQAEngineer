@@ -10,7 +10,7 @@ class TestTriangle:
     @pytest.mark.parametrize("side_a, side_b, side_c, expected_name", [
         (2, 2, 3, "Triangle"),
     ])
-    def test_triangle_name(self, side_a, side_b, side_c, expected_name):
+    def test_triangle_name(self, side_a: int | float, side_b: int | float, side_c: int | float, expected_name: str):
         triangle_obj = Triangle(side_a, side_b, side_c)
         assert triangle_obj.name == expected_name
 
@@ -20,7 +20,8 @@ class TestTriangle:
         (7, 12, 12, 40.17, 31),
         (3.5, 3.5, 3.5, 5.3, 10.5),
     ])
-    def test_triangle(self, side_a, side_b, side_c, expected_area, expected_perimeter):
+    def test_triangle(self, side_a: int | float, side_b: int | float, side_c: int | float, expected_area: int | float,
+                      expected_perimeter: int | float):
         triangle_obj = Triangle(side_a, side_b, side_c)
         assert triangle_obj.area == expected_area
         assert triangle_obj.perimeter == expected_perimeter
@@ -37,7 +38,7 @@ class TestTriangle:
         (30, 5, 5),
         (9, 15, 1),
     ])
-    def test_triangle_negative(self, side_a, side_b, side_c):
+    def test_triangle_negative(self, side_a: int | float, side_b: int | float, side_c: int | float):
         with pytest.raises(ValueError):
             Triangle(side_a, side_b, side_c)
 
@@ -46,7 +47,8 @@ class TestTriangle:
         (Triangle(6, 6, 6), Rectangle(3, 6), 33.59),
         (Triangle(10, 12, 10), Rectangle(4, 8), 80),
     ], ids=str)
-    def test_triangle_add_rectangle_area(self, triangle_obj, rectangle_obj, expected_area):
+    def test_triangle_add_rectangle_area(self, triangle_obj: Triangle, rectangle_obj: Rectangle,
+                                         expected_area: int | float):
         area = triangle_obj.add_area(rectangle_obj)
         assert area == expected_area
 
@@ -55,7 +57,7 @@ class TestTriangle:
         (Triangle(5, 5, 5), Circle(4), 61.1),
         (Triangle(3.5, 3.5, 3.5), Circle(10), 319.46),
     ], ids=str)
-    def test_triangle_add_circle_area(self, triangle_obj, circle_obj, expected_area):
+    def test_triangle_add_circle_area(self, triangle_obj: Triangle, circle_obj: Circle, expected_area: int | float):
         area = round(triangle_obj.add_area(circle_obj), 2)
         assert area == expected_area
 
@@ -64,13 +66,13 @@ class TestTriangle:
         (Triangle(6, 6, 6), Square(4), 31.59),
         (Triangle(10, 12, 10), Square(10), 148),
     ], ids=str)
-    def test_triangle_add_square_area(self, triangle_obj, square_obj, expected_area):
+    def test_triangle_add_square_area(self, triangle_obj: Triangle, square_obj: Square, expected_area: int | float):
         area = triangle_obj.add_area(square_obj)
         assert area == expected_area
 
     @pytest.mark.parametrize("triangle_obj, other_obj", [
         (Triangle(13, 14, 15), Mock()),
     ], ids=str)
-    def test_triangle_add_area_negative(self, triangle_obj, other_obj):
+    def test_triangle_add_area_negative(self, triangle_obj: Triangle, other_obj: Mock):
         with pytest.raises(ValueError):
             triangle_obj.add_area(other_obj)

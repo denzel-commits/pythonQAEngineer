@@ -4,13 +4,13 @@ from abc import ABC, abstractmethod
 class Figure(ABC):
     @property
     @abstractmethod
-    def area(self):
+    def area(self) -> int | float:
         """This property calculates the area of a figure"""
         pass
 
     @property
     @abstractmethod
-    def perimeter(self):
+    def perimeter(self) -> int | float:
         """This property calculates the perimeter of a figure"""
         pass
 
