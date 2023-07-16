@@ -37,14 +37,6 @@ class Triangle(Figure):
     def perimeter(self):
         return self._side_a + self._side_b + self._side_c
 
-    def get_area(self):
-        s = (self._side_a + self._side_b + self._side_c) / 2
-
-        return round(((s * (s - self._side_a) * (s - self._side_b) * (s - self._side_c)) ** 0.5), 2)
-
-    def get_perimeter(self):
-        return self._side_a + self._side_b + self._side_c
-
     def __str__(self):
         return f"{self.name}(side_a={self._side_a}, side_b={self._side_b}, side_c={self._side_c}, area={self.area}" \
                f", perimeter={self.perimeter})"

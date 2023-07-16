@@ -17,16 +17,10 @@ class Rectangle(Figure):
 
     @property
     def area(self):
-        return self.get_area()
+        return self._side_a * self._side_b
 
     @property
     def perimeter(self):
-        return self.get_perimeter()
-
-    def get_area(self):
-        return self._side_a * self._side_b
-
-    def get_perimeter(self):
         return 2 * (self._side_a + self._side_b)
 
     def __str__(self):
